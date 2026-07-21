@@ -1,0 +1,78 @@
+{
+  "name": "@wolbarg/llamaindex",
+  "version": "1.0.1",
+  "description": "Official LlamaIndexTS long-term memory block for Wolbarg shared memory.",
+  "license": "MIT",
+  "author": {
+    "name": "Atharv Munde",
+    "url": "https://github.com/Atharvmunde11"
+  },
+  "homepage": "https://wolbarg.com/docs/integrations/llamaindex",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wolbarg/llamaindex.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wolbarg/llamaindex/issues"
+  },
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "tsup",
+    "clean": "rimraf dist",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run clean && npm run build && npm run test"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@llamaindex/core": ">=0.6.0",
+    "llamaindex": ">=0.9.0",
+    "wolbarg": ">=0.5.4"
+  },
+  "peerDependenciesMeta": {
+    "llamaindex": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@llamaindex/core": "^0.6.22",
+    "@types/node": "^22.15.21",
+    "llamaindex": "^0.12.1",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4",
+    "wolbarg": "file:../../sdk"
+  },
+  "keywords": [
+    "wolbarg",
+    "llamaindex",
+    "llamaindex-ts",
+    "memory-block",
+    "BaseMemoryBlock",
+    "agent-memory",
+    "long-term-memory"
+  ]
+}
