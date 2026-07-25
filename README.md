@@ -111,6 +111,7 @@ wolbargBlock({
 
 ## Limitations
 
+- Integration surface is **`BaseMemoryBlock` only** (`wolbargBlock` / `createWolbargMemoryBlock`). This package does not wrap LlamaIndex `VectorStore` / storage-context APIs.
 - Recall query uses the **last user** message only (not a multi-turn window).
 - `put` skips messages with role `"memory"` and empty content.
 - Does not replace LlamaIndex short-term chat buffer — use alongside `createMemory`.
